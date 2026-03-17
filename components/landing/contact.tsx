@@ -72,20 +72,20 @@ export function Contact() {
                 предложу решения по материалам и рассчитаю стоимость.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 rounded-xl border border-card/15 bg-card/5 p-3">
-                    <div className="w-10 h-10 bg-card/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-start gap-3 rounded-xl border border-card/15 bg-card/5 p-3 min-w-0">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-card/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-4 h-4 text-accent" />
                     </div>
-                    <div>
+                    <div className="min-w-0 overflow-hidden">
                       <p className="text-xs text-card/60 uppercase tracking-wider">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="font-semibold text-card hover:text-accent transition-colors">
+                        <a href={item.href} className="font-semibold text-card hover:text-accent transition-colors break-words">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="font-semibold text-card">{item.value}</p>
+                        <p className="font-semibold text-card break-words">{item.value}</p>
                       )}
                     </div>
                   </div>

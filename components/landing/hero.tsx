@@ -73,7 +73,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative">
+          {/* Hero image: hidden on mobile and tablet, visible from lg (1024px) */}
+          <div className="relative hidden lg:block">
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-border/70">
               <img
                 src="/imgs/hero-image.jpg"

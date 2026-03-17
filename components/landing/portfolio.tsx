@@ -135,12 +135,13 @@ export function Portfolio() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 auto-rows-[230px] gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[200px] sm:auto-rows-[230px] gap-4 sm:gap-5">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl ring-1 ring-border/60 shadow-md ${
-                index === 0 ? "md:col-span-2 md:row-span-2" : index === 3 ? "lg:col-span-2" : ""
+              tabIndex={0}
+              className={`group relative overflow-hidden rounded-2xl ring-1 ring-border/60 shadow-md min-h-[200px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                index === 0 ? "sm:col-span-2 sm:row-span-2 sm:min-h-[460px]" : index === 3 ? "lg:col-span-2" : ""
               }`}
             >
               <img
@@ -148,17 +149,17 @@ export function Portfolio() {
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Gradient + info — only on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="absolute top-4 left-4">
-                <span className="inline-flex rounded-full bg-background/85 px-3 py-1 text-xs font-medium text-foreground">
+              {/* Gradient + info — only on hover (on touch: tap to show) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100" />
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                <span className="inline-flex rounded-full bg-background/85 px-2.5 py-1 sm:px-3 text-xs font-medium text-foreground">
                   {project.category}
                 </span>
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-5 opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                <p className="text-card font-serif text-lg md:text-xl font-semibold mb-1.5">{project.title}</p>
-                <p className="text-card/85 text-sm mb-0.5">{project.service}</p>
-                <p className="text-card/70 text-sm">Площадь: {project.area}</p>
+              <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5 opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 min-w-0">
+                <p className="text-card font-serif text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-1.5 line-clamp-2">{project.title}</p>
+                <p className="text-card/85 text-xs sm:text-sm mb-0.5 line-clamp-2">{project.service}</p>
+                <p className="text-card/70 text-xs sm:text-sm">Площадь: {project.area}</p>
               </div>
             </div>
           ))}

@@ -36,12 +36,12 @@ const advantages = [
 export function Advantages() {
   return (
     <section id="advantages" className="section-shell py-20 md:py-32 bg-foreground text-card relative overflow-hidden">
-      {/* Decorative tile texture — no crop, no frame, fades into dark background */}
+      {/* Decorative tile texture — hidden on mobile/tablet, visible from lg */}
       <img
         src="/imgs/tile-back-png.png"
         alt=""
         aria-hidden="true"
-        className="absolute bottom-0 left-[18%] w-[44%] max-w-md pointer-events-none select-none object-contain opacity-100"
+        className="absolute bottom-0 left-[18%] w-[44%] max-w-md pointer-events-none select-none object-contain opacity-100 hidden lg:block"
         style={{ transform: "translateY(12%)" }}
       />
 
@@ -70,20 +70,20 @@ export function Advantages() {
 
           <div className="grid gap-4">
             {advantages.map((advantage, index) => (
-              <div key={index} className="grid grid-cols-[auto_1fr] gap-4 rounded-2xl border border-card/15 bg-card/5 p-5">
-                <div className="w-11 h-11 rounded-lg bg-card/10 flex items-center justify-center">
+              <div key={index} className="grid grid-cols-[auto_1fr] gap-3 sm:gap-4 rounded-2xl border border-card/15 bg-card/5 p-4 sm:p-5 min-w-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-card/10 flex items-center justify-center flex-shrink-0">
                   <advantage.icon className="w-5 h-5 text-accent" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className="text-xs tracking-wider text-card/60">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-serif text-xl font-semibold">
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold">
                       {advantage.title}
                     </h3>
                   </div>
-                  <p className="text-card/70 leading-relaxed">
+                  <p className="text-card/70 leading-relaxed text-sm sm:text-base">
                     {advantage.description}
                   </p>
                 </div>

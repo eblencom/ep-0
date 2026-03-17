@@ -49,29 +49,29 @@ export function Reviews() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {reviews.map((review, index) => (
-            <Card key={index} className="relative border-border/70 bg-card">
-              <CardContent className="pt-8 pb-6">
-                <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
+            <Card key={index} className="relative border-border/70 bg-card min-w-0">
+              <CardContent className="pt-6 sm:pt-8 pb-5 sm:pb-6 px-4 sm:px-6">
+                <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary/20 absolute top-4 right-4 sm:top-6 sm:right-6" />
                 
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-accent text-accent" />
                   ))}
                 </div>
 
-                <p className="text-foreground leading-relaxed mb-6">
+                <p className="text-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                   {review.text}
                 </p>
 
-                <div className="flex items-center justify-between border-t border-border pt-4">
-                  <div>
-                    <p className="font-semibold text-foreground">{review.name}</p>
-                    <p className="text-sm text-muted-foreground">{review.location}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-t border-border pt-4">
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">{review.name}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{review.location}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-primary font-medium">{review.project}</p>
+                  <div className="text-left sm:text-right min-w-0">
+                    <p className="text-xs sm:text-sm text-primary font-medium">{review.project}</p>
                   </div>
                 </div>
               </CardContent>

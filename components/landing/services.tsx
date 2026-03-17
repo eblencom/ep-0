@@ -63,14 +63,14 @@ export function Services() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group h-full border-border/70 bg-card/90 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="group h-full border-border/70 bg-card/90 shadow-sm hover:shadow-lg transition-shadow duration-300 min-w-0"
             >
-              <CardHeader>
-                <div className="flex items-center justify-between mb-5">
+              <CardHeader className="p-4 sm:p-6">
+                <div className="flex items-center justify-between mb-4 sm:mb-5">
                   <span className="text-xs font-semibold tracking-wider text-muted-foreground">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -78,15 +78,15 @@ export function Services() {
                     {service.price}
                   </span>
                 </div>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <CardTitle className="font-serif text-xl">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardTitle className="font-serif text-lg sm:text-xl">{service.title}</CardTitle>
+                <CardDescription className="text-muted-foreground leading-relaxed text-sm sm:text-base min-w-0">
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 sm:p-6 pt-0">
                 <a href="#contact" className="text-sm text-foreground/80 hover:text-primary transition-colors">
                   Обсудить проект →
                 </a>
