@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle, ShieldCheck, Star } from "lucide-react"
 
 const benefits = [
   "Бесплатный выезд и замер",
-  "Гарантия 3 года на работы",
+  "Гарантия 5 лет на работы",
   "Работа по договору",
 ]
 
@@ -67,7 +67,7 @@ export function Hero() {
                 <p className="text-sm text-muted-foreground">выполненных объектов</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-background/85 p-4">
-                <p className="font-serif text-3xl font-bold text-foreground">3 года</p>
+                <p className="font-serif text-3xl font-bold text-foreground">5 лет</p>
                 <p className="text-sm text-muted-foreground">официальной гарантии</p>
               </div>
             </div>

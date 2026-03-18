@@ -3,7 +3,7 @@ import { Shield, Clock, Award, Wrench, FileText, Headphones } from "lucide-react
 const advantages = [
   {
     icon: Shield,
-    title: "Гарантия 3 года",
+    title: "Гарантия 5 лет",
     description: "На все выполненные работы предоставляю письменную гарантию",
   },
   {
